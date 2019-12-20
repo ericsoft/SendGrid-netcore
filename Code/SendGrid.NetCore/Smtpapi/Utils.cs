@@ -20,24 +20,11 @@ namespace SendGrid.SmtpApi
         public static string Serialize<T>(T objectToSerialize)
         {
             if (objectToSerialize == null)
+            {
                 throw new ArgumentNullException("A key or value in your X-SMTPAPI header is null.");
-			var serializer = JsonSerializer.Create();
-			using (var writer = new StringWriter())
-			{
-				using (var jsonWriter = new JsonTextWriter(writer))
-				{
-					serializer.Serialize(jsonWriter, objectToSerialize);
-					return jsonWriter.ToString();
-					//Console.WriteLine(writer.ToString());
-				}
-			}
-			//new JsonSerializer(objectToSerialize.GetType()));
-            //using (var stream = new MemoryStream())
-            //{
-            //    serializer.Serialize();.WriteObject(stream, objectToSerialize);
-            //    string jsonData = Encoding.UTF8.GetString(stream.ToArray(), 0, (int) stream.Length);
-            //    return jsonData; //return EncodeNonAsciiCharacters(jsonData);
-            //}
+            }
+
+            return JsonConvert.SerializeObject(objectToSerialize);
         }
 
         /// <summary>
