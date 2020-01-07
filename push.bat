@@ -1,1 +1,0 @@
-call nuget push "%~dp0Packaged\*.nupkg" -Source %BrandlessNuGet%

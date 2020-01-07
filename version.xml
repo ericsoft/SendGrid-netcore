@@ -1,8 +1,0 @@
-<!-- This file may be overwritten by automation. -->
-<Project>
-  <PropertyGroup>
-    <VersionPrefix>1.0.3</VersionPrefix>
-    <VersionSuffix>0002</VersionSuffix>
-    <BuildNumber>0-Release</BuildNumber>
-  </PropertyGroup>
-</Project>
